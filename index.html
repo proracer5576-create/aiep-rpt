@@ -185,7 +185,7 @@ footer{text-align:center;padding:24px;color:var(--text2);font-size:.82rem;margin
 
 <div class="sec">
   <h2>🔑 키워드 연관 마인드맵</h2>
-  <p style="font-size:.85rem;color:var(--text2);margin-bottom:14px">카테고리별 주요 키워드와 등장 빈도 · 노드 크기 = 빈도 · <span style="color:#94a3b8;font-weight:600">회색 노드</span>는 자기지칭·공통 단어(아이모두·학생·학교·구글·계정·로그인), 진한 색은 카테고리 고유 문제 단어</p>
+  <p style="font-size:.85rem;color:var(--text2);margin-bottom:14px">카테고리별 주요 키워드와 등장 빈도 · 노드 크기 = 빈도 · <span style="color:#94a3b8;font-weight:600">회색 노드</span>는 자기지칭 단어(아이모두·학생·학교), 진한 색은 카테고리 고유 문제 단어</p>
   <div style="position:relative">
     <svg id="mindmap-svg" viewBox="0 0 1000 680" xmlns="http://www.w3.org/2000/svg"></svg>
     <div class="mm-tooltip" id="mmTooltip"></div>
@@ -372,7 +372,7 @@ function toggleAcc(el){el.classList.toggle('open');document.querySelectorAll('.l
     catG.addEventListener('mouseleave',()=>tip.style.display='none');
     svg.appendChild(catG);
     const maxFreq=Math.max(...item.keywords.map(k=>k.freq),1);
-    const META_WORDS=new Set(['아이모두','학생','학교','구글','계정','로그인']);
+    const META_WORDS=new Set(['아이모두','학생','학교']);
     item.keywords.slice(0,3).forEach((kw,ki)=>{
       const kws=item.keywords.slice(0,3);
       const kwAngle=angle+(ki-(kws.length-1)/2)*0.60/Math.max(kws.length,1);
